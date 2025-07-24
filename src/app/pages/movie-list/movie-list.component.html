@@ -1,0 +1,35 @@
+<section class="uk-section uk-section-default uk-height-viewport">
+  <div class="uk-container">
+
+    <h2 class="uk-text-bold uk-h1 uk-margin-remove-adjacent uk-margin-remove-top">Films</h2>
+
+    <div class="uk-overflow-auto">
+      <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+
+        @for (movie of movies; track movie) {
+          <div class="uk-card uk-card-secondary uk-card-hover uk-card-body eni-movie-card"
+               [ngStyle]="{ 'background-image': 'url(' + movie.cover + ')' }">
+            <div class="eni-dark-overlay"></div>
+            <div>
+              <div class="eni-movie-card-header">
+                <h1>{{ movie.title }}</h1>
+                <h4>{{ movie.year }}, {{ movie.author }}</h4>
+                <span class="minutes">{{ movie.duration }} min</span>
+                <!-- Staring -->
+                <app-star-rating [rating]="movie.rating"></app-star-rating>
+                <p class="type">{{ movie.genre }}</p>
+              </div>
+              <div class="eni-movie-card-desc">
+                <p class="text">
+                  {{ movie.synopsis }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        }
+
+      </div>
+    </div>
+  </div>
+</section>

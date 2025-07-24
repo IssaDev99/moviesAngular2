@@ -1,0 +1,6 @@
+<!-- Staring -->
+<div class="eni-movie-rating">
+  @for (i of [1, 2, 3, 4, 5]; track i) {
+    <i [ngClass]="getStarClass(i, rating)"></i>
+  }
+</div>
